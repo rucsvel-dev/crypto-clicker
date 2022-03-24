@@ -46,3 +46,6 @@ typechain
 #Hardhat files
 cache
 artifacts
+
+#editors
+.idea
