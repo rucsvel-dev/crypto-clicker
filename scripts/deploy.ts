@@ -2,14 +2,14 @@ import { ethers } from "hardhat";
 import fs from "fs";
 
 async function main() {
-  const Greeter = await ethers.getContractFactory("Greeter");
-  const greeter = await Greeter.deploy("Hello, Hardhat!");
-  await greeter.deployed();
+  const Clicker = await ethers.getContractFactory("Clicker");
+  const clicker = await Clicker.deploy();
+  await clicker.deployed();
 
-  console.log(`deployed to:`, greeter.address);
+  console.log(`deployed to:`, clicker.address);
 
   const config = `
-  export const greeterAddress = "${greeter.address}"
+  export const greeterAddress = "${clicker.address}"
   `;
   const data = JSON.stringify(config);
 
