@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "local-console": "npx hardhat console --network localhost",
+    "local-node": "npx hardhat node",
+    "local-deploy": " npx hardhat run --network localhost scripts/deploy.ts"
   },
   "dependencies": {
     "next": "12.1.0",
