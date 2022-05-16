@@ -12,19 +12,24 @@ dotenv.config();
 const config: HardhatUserConfig = {
   solidity: "0.8.4",
   networks: {
-    ropsten: {
-      url: process.env.ROPSTEN_URL || "",
-      accounts:
-          process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
+    rinkeby: {
+      url: process.env.RINKEBY_RPC_URL || "",
+      accounts: [process.env.PRIVATE_KEY || ""],
+      gas: 2100000,
+      gasPrice: 8000000000,
     },
+    matic: {
+      url: process.env.MUMBAI_RPC_URL || "",
+      accounts: [process.env.PRIVATE_KEY || ""]
+    }
   },
-  gasReporter: {
-    enabled: process.env.REPORT_GAS !== undefined,
-    currency: "USD",
-  },
-  etherscan: {
-    apiKey: process.env.ETHERSCAN_API_KEY,
-  },
+  // gasReporter: {
+  //   enabled: process.env.REPORT_GAS !== undefined,
+  //   currency: "USD",
+  // },
+  // etherscan: {
+  //   apiKey: "UKK1EIM738DJHS8PCCPFZMNJAZDSHDB1CH",
+  // },
 };
 
 export default config;

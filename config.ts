@@ -1,0 +1,1 @@
+export const clickerAddress = "0x24D9f09FAe2978E61D6cb4acDFC436372510C3E2"

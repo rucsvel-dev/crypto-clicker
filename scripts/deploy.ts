@@ -8,12 +8,10 @@ async function main() {
 
   console.log(`deployed to:`, clicker.address);
 
-  const config = `
-  export const greeterAddress = "${clicker.address}"
-  `;
+  const config = `export const clickerAddress = "${clicker.address}"`;
   const data = JSON.stringify(config);
 
-  fs.writeFileSync("config.js", JSON.parse(data));
+  fs.writeFileSync("config.ts", JSON.parse(data));
 }
 
 main().catch((error) => {
